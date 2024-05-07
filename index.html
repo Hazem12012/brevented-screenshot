@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Disable Screen Capture</title>
+
+  </head>
+  <body>
+    <h1 id="hazem">My Name Is Hazem 😂😂!</h1>
+    <div class="content">
+    </div>
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          width: 100%;
+          font-family: "Courier New", Courier, monospace;
+          background-color: rgb(159, 170, 170);
+        }
+        .content {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 200%;
+          background-color: #000;
+          opacity: 0;
+          z-index: 9999;
+          pointer-events: none;
+        }
+      </style>
+    <!-- يمكنك إضافة المزيد من المحتوى هنا -->
+    <script>
+      //***********************************
+      // // منع التقاط الشاشة عن طريق زر "Print Screen"
+      // window.addEventListener('widows', function(event) {
+      //     if (event.keyCode === 65) {
+      //         event.preventDefault(); // منع السلوك الافتراضي
+      //         alert('تم منع التقاط الشاشة!');
+      //     }
+      // });
+
+      // // منع ظهور القائمة المنسدلة عند النقر بزر الماوس الأيمن
+      // window.addEventListener('contextmenu', function(event) {
+      //     event.preventDefault(); // منع السلوك الافتراضي
+      //     alert('تم منع التقاط الشاشة!');
+      // });
+      //***************************************************
+      //         function handleKeyPress(event) {
+      //     // التحقق من الزر المضغوط
+      //     if (event.key === "w") {
+      //         // على سبيل المثال، إذا كانت الضغطة على زر "a"
+      //         console.log("لقد تم الضغط على زر 'a'");
+      //     } else if (event.key === "Enter") {
+      //         // إذا كانت الضغطة على زر "Enter"
+      //         console.log("لقد تم الضغط على زر 'Enter'");
+      //     }
+      //     // يمكنك إضافة شروط أخرى حسب الحاجة
+      // }
+
+      // // ربط الدالة بحدث keypress
+      // document.addEventListener("keypress", handleKeyPress);
+      //*********************************************************
+
+
+
+      let body = document.querySelector("body");
+      let bodyContent = document.querySelector(".content");
+
+
+
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Meta" || event.keyCode === 91 || event.key === "F12") {
+            bodyContent.style.opacity = " 1";
+          console.log("The print is not valid");
+        }
+         else if(event.key==="Escape" || event.keyCode===27) {
+            bodyContent.style.opacity = "0";
+          alert("The print is not valid 😂😂");
+        }
+        console.log(event.key);
+        console.log(event.keyCode);
+      });
+    </script>
+
+  </body>
+</html>
